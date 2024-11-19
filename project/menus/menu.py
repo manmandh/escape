@@ -42,11 +42,6 @@ class Menu:
             "select level",
             constants.FONTS["sizes"]["large"], constants.FONTS["colour"], constants.FONTS["main"])
 
-        self.editor_button = pygame_gui.TextButton(
-            [self.menux, self.menuy + 90, 150, 40],
-            constants.COLOURS["panel"], constants.COLOURS["panel-hover"],
-            "editor",
-            constants.FONTS["sizes"]["large"], constants.FONTS["colour"], constants.FONTS["main"])
 
         self.version = pygame_gui.Text(
             constants.version,
@@ -97,7 +92,6 @@ class Menu:
         self.title.draw(self.display)
 
         self.continue_button.draw(self.display)
-        self.editor_button.draw(self.display)
 
         self.version.draw(self.display)
         self.project_github.draw(self.display)

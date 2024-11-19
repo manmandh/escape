@@ -15,4 +15,4 @@ try:
 
 except Exception as e:
     logging.exception("caught at main")
-    raise e  # personal choice, still want to see error in IDE
+    raise e 
