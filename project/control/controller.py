@@ -7,7 +7,6 @@ import exceptions
 
 import project.menus as menus
 import project.game.controller as game
-import project.editor.controller as editor
 
 
 class ApplicationController:
@@ -36,9 +35,6 @@ class ApplicationController:
             elif self.state == "load_game":
                 self.run_loadgame()
 
-            elif self.state == "editor":
-                self.run_editor()
-
             elif self.state == "game":
                 self.run_game()
 
@@ -55,14 +51,6 @@ class ApplicationController:
         load_game = menus.LoadGame(self.display)
         self.state = load_game.get_state()
         self.game_reference = load_game.get_game()
-
-    def run_editor(self):
-        running_editor = editor.Application()  # redefined to resize pygame.display
-        self.state = running_editor.get_state()
-
-        # resetting display, changed due to game resolution
-        self.display = pygame.display.set_mode(constants.DISPLAY_SIZE)
-        pygame.display.set_caption(constants.DISPLAY_NAME)
 
     def run_game(self):
         if self.game_reference is None:
